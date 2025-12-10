@@ -36,7 +36,7 @@ void countingSort(vector<int>& arr) {
 }
 
 int main() {
-    vector<int> arr = {4, 2, 2, 8, 3, 3, 1};
+    vector<int> arr = {4, 2, 2, 8, 13, 3, 1};
 
     countingSort(arr);
 

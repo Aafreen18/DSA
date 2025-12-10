@@ -3,6 +3,9 @@
 #include<algorithm>
 using namespace std;
 
+//Radix Sort is not comparison based sorting. 
+//Time complexity - o(digits*(arr.size() + bucket size)
+
 void countingSort(vector<int>& arr, int exp) {
     int size = arr.size();
 
@@ -10,12 +13,20 @@ void countingSort(vector<int>& arr, int exp) {
     int max_val = *max_element(arr.begin(), arr.end());
 
     // 2️⃣ Create count and output arrays
-    vector<int> count(10, 0);
+    vector<int> count(10, 0);// bucket size = 10
     vector<int> output(size);
 
     // 3️⃣ Count each element and store frequency
     for (int i = 0; i < size; i++) {
-        count[(arr[i] / exp) % 10]++;
+        // Extract the digit at the current exponent (exp)
+        // Example: exp = 1  → units digit
+        //          exp = 10 → tens digit
+        //          exp = 100 → hundreds digit
+        //
+        // digit = (arr[i] / exp) % 10
+        //
+        // This gives a value in range 0–9, so it fits in "count[10]".
+        count[(arr[i] / exp) % 10]++;// or it can also be written as count[arr[pos]] ----> pos = at what place we want to do sorting if we pass "pos" instead of exp if pos lies in the range of (0, 9)
     }
 
     // 4️⃣ Modify count[i] so it stores cumulative counts
