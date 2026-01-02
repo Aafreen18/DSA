@@ -122,8 +122,8 @@ class SinglyLinkedList{
     void updateNodeByKey(int k, int d){
         Node *ptr = nodeExists(k);
         if(ptr != NULL) {
-        ptr->data = d;
-        cout << "Node data updated successfully" << endl;
+            ptr->data = d;
+            cout << "Node data updated successfully" << endl;
         } 
         else{
             cout << "Node doesn't exist with the key value " << k << endl;

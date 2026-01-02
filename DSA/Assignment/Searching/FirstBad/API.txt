@@ -1,0 +1,13 @@
+bool isBadVersion(int x)
+{
+    if(x a bad version)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool value = isBadVersion(x);
