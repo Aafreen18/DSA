@@ -6,6 +6,13 @@
 #include<stack>
 using namespace std;
 
+//topological sort using DFS
+//tc: O(V+E)
+//sc: O(V) for stack and O(V) for visited array
+//directed acyclic graph(DAG)
+//u always comes before v in topological sort
+//if u is not coming before v then there is a cycle in the graph
+
 class Solution {
   public:
     vector<int> topoSort(int V, vector<vector<int>>& edges) {

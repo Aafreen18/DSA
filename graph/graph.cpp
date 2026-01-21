@@ -106,8 +106,8 @@ class graph{
         return ans;
     }
 
-    //cycle detection of indirect graph
-    bool isCycleIndirect(vector<vector<int>>& adj) {
+    //cycle detection of undirected graph ->BFS
+    bool isCycleUndirect(vector<vector<int>>& adj) {
         // Code here
         unordered_map<int, bool> visited;
         
@@ -149,7 +149,7 @@ class graph{
                     visited[i] = true;
                     parent[i] = frontNode;
                 }
-                //visited[i] == true && i == parent[frontNode] -> neglect
+                //visited[i] == true && i == parent[frontNode] -> neglect //jo ek node ka neighbour hai wahi uska parent hoga toh cycle nhi hoga -- iska matlab hai wo ussi parent se aaya hai matlab ek hi path se aaya hai 
             }
             
         }
@@ -157,7 +157,7 @@ class graph{
         return false;
     }
     
-    //indirect
+    //undirected graph for dfs
     bool cycleDetectionDFS(int node, int parent, unordered_map<int, bool> &visited, vector<vector<int>>& adj){
         visited[node] = true;
         
@@ -178,7 +178,7 @@ class graph{
     }
 
 
-    //cycle detection of direct graph
+    //cycle detection of directed graph DFS
     bool isCyclicDirect(vector<vector<int>> &adj) {
         unordered_map<int, bool> visited;
         unordered_map<int, bool> DFSvisited;
@@ -221,8 +221,53 @@ class graph{
     }
 
     //cycle detction of directed graph using BFS
-    
+        vector<int> indegree;
+        void adjacencyList(vector<vector<int>> edges, int v, int e){
+        for(int i = 0; i < edges.size(); i++){
+            int u = edges[i][0];
+            int w = edges[i][1];   
 
+            adj[u].push_back(w);
+        }
+
+        // create indegree    
+        for(auto i : adj){
+            for(auto j : i.second){
+                indegree[j]++;
+            }
+        }
+
+        // pushing 0 indegree nodes
+        for(int i = 0; i < v; i++){
+            if(indegree[i] == 0){
+                q.push(i);
+            }
+        }
+    }
+
+    bool topologicalSort(queue<int>& q, vector<int>& ans, int n){
+        int cnt = 0;
+
+        while(!q.empty()){
+            int frontNode = q.front();
+            q.pop();
+
+            ans.push_back(frontNode);
+            cnt++;
+
+            // neighbor indegree update
+            for(auto neighbor : adj[frontNode]){
+                indegree[neighbor]--;
+
+                if(indegree[neighbor] == 0){
+                    q.push(neighbor);
+                }
+            }
+        }
+
+        if(cnt == n) return true;
+        return false;
+    }
 };
 
 int main(){
