@@ -4,8 +4,8 @@
 #include <algorithm>
 using namespace std;
 
-// monotonic increasing function = ascending order(top to down) = nse, pse
-// monotonic decreasing function = descending order(top to down) = nge, pge
+// monotonic increasing function = ascending order(bottom→top) = nse, pse
+// monotonic decreasing function = descending order(bottom→top) = nge, pge
 
 int main() {
     vector<int> arr = {2, 1, 5, 6, 2, 3};
