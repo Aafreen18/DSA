@@ -120,6 +120,7 @@ int main(){
 
     int arr[5] = {54, 53, 55, 52, 50};
 
+    //desc order (maxheap)
     int n = 5;
     for(int i=n/2; i>=0; i--){
         h.heapify(arr, n, i);
