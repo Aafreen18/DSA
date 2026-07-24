@@ -23,6 +23,7 @@ void heapify(int arr[], int n, int i){
 
 //It is used to sort an array in descending order
 //Min Heap + move root to end → Descending order ✅
+//time complexity - O(nlogn)
 void heapSort(int arr[], int n){
     // 1. Build min heap
     for(int i = n/2 - 1; i >= 0; i--){
