@@ -91,6 +91,7 @@ class Heap{
         
     }
 
+    //elements are already in maxHeap --- we just now extract elements in sorted form (ascending) -- thats why we are swapping largest with smallest element
     void heapSort(int arr[], int n){
         int len = n;
 
@@ -100,7 +101,7 @@ class Heap{
             len--;
 
             //build max heap 
-            heapify(arr, len, 0);
+            heapify(arr, len, 0);// again building maxheap to get largest element at root
         }
     }
 };
