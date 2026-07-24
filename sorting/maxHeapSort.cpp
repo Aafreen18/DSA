@@ -22,6 +22,7 @@ void heapify(int arr[], int n, int i){
 }
 
 // It is used to sort an array in ascending order
+//Max Heap + move root to end → Ascending order ✅
 void heapSort(int arr[], int n){
     // 1. Build max heap
     for(int i = n/2 - 1; i >= 0; i--){
