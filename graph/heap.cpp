@@ -72,16 +72,16 @@ class Heap{
 
     //descending
     void heapify(int arr[], int n, int i){
-        int largest = i;
+        int largest = i; //parentIdx -- it should be larger than its children(left, right) for descending
         int leftIdx = 2*i + 1;
         int rightIdx = 2*i + 2;
 
         if(leftIdx < n && arr[largest] < arr[leftIdx]){
-            largest = leftIdx;
+            largest = leftIdx;// if not, then ready to swap with left child 
         }
         
         if(rightIdx < n && arr[largest] < arr[rightIdx]){
-            largest = rightIdx;
+            largest = rightIdx; // if not, then ready to swap with left child 
         }
         
         if(largest != i){
