@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//It is used to sort an array in descending order
+//It is used to build maxheap
 void heapify(int arr[], int n, int i){
     int largest = i;
     int leftIdx = 2*i + 1;
@@ -21,6 +21,7 @@ void heapify(int arr[], int n, int i){
     }
 }
 
+// It is used to sort an array in ascending order
 void heapSort(int arr[], int n){
     // 1. Build max heap
     for(int i = n/2 - 1; i >= 0; i--){
@@ -28,7 +29,7 @@ void heapSort(int arr[], int n){
     }
 
     int len = n;
-    // 2. Extract elements from heap one by one
+    // 2. Extract elements from heap one by one 
     while(len > 1){
         swap(arr[0], arr[len-1]);  // swap max with last element
         len--;
