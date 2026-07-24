@@ -91,7 +91,7 @@ class Heap{
         
     }
 
-    //elements are already in maxHeap --- we just now extract elements in sorted form (ascending) -- thats why we are swapping largest with smallest element
+    //elements are already in maxHeap --- we just now extract elements in sorted form (ascending) -- thats why we are swapping largest with last element in order to get asc order
     void heapSort(int arr[], int n){
         int len = n;
 
