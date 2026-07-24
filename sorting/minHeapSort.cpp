@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//It is used to sort an array in ascending order
+//It is used to build minheap
 void heapify(int arr[], int n, int i){
     int smallest = i;
     int leftIdx = 2*i + 1;
@@ -21,6 +21,7 @@ void heapify(int arr[], int n, int i){
     }
 }
 
+//It is used to sort an array in descending order
 void heapSort(int arr[], int n){
     // 1. Build min heap
     for(int i = n/2 - 1; i >= 0; i--){
