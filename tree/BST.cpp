@@ -196,7 +196,7 @@ class BST{
         }
     }
 
-
+    // we go bottom of the tree and add 1 to that subtree whose height is greater then move towrds top by keep adding one to larger height subtree
     int height(TreeNode *r){
         if (r == NULL)
         return -1;
@@ -228,7 +228,7 @@ class BST{
     void printLevelOrderBFS(TreeNode * r) {
         int h = height(r);
         for (int i = 0; i <= h; i++)
-        printGivenLevel(r, i);
+        printGivenLevel(r, i);// root will go i'th level deep to reach "i" level and level will reduce to zero in order to print that level value
     }
 
     TreeNode* minValueNode(TreeNode *node){
