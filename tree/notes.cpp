@@ -8,6 +8,7 @@
 Definition:
 - For every node, the height difference between its left
   and right subtree is at most 1.
+- Each 
 
 Condition:
 - |height(left) - height(right)| <= 1
@@ -31,7 +32,7 @@ Properties:
 2. PERFECT BINARY TREE
 ---------------------------------------------------------
 Definition:
-- Every internal node has exactly 2 children.
+- Every internal node has exactly 2 children except leaf nodes.
 - All leaf nodes are at the same level.
 
 Example:
