@@ -2,6 +2,10 @@
 #define SPACE 10
 using namespace std;
 
+
+//Balanced tree: O(log N)
+//Completely skewed tree: O(N)
+
 class TreeNode{
     public:
     int value;
