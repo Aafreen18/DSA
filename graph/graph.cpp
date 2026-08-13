@@ -5,6 +5,10 @@
 #include<queue>
 using namespace std;
 
+//vector<vector<int>> adj(3);
+//adj[0] - means the inner vector at index 0.
+//adj[0].push_back(1) - means go to the vector at index 0, then add 1 to that vector.
+
 class graph{
     public:
     unordered_map<int, list<int>> adj;
