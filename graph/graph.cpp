@@ -81,7 +81,7 @@ class graph{
     //dfs traversal
     void DFS(int node, unordered_map<int, bool> &visited, vector<vector<int>>& adj, vector<int> &components){
         
-        components.push_back(node);
+        components.push_back(node);// ans
         visited[node] = true;
         
         for( auto i : adj[node]){
