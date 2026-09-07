@@ -1,0 +1,15 @@
+        SHORTEST PATH
+                       |
+          +------------+------------+
+          |                         |
+     Unweighted                  Weighted
+          |                         |
+         BFS               +---------+---------+
+                           |                   |
+                     Non-negative          Negative
+                           |                   |
+                       Dijkstra          Bellman-Ford
+                           |
+                    Special case 0/1
+                           |
+                       0-1 BFS
