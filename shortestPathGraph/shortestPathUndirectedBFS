@@ -1,0 +1,58 @@
+class Solution {
+  public:
+    int shortestPath(int V, vector<vector<int>> &edges, int src, int dest) {
+        // code here
+        unordered_map<int, vector<int>> adj;
+        vector<bool> vis(V, 0);
+        vector<int> parent(V, -1);
+        
+        for(int i=0; i<edges.size(); i++){
+            int u = edges[i][0];
+            int v = edges[i][1];
+            
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+        
+        BFS(src, adj, vis, parent, dest);
+        
+        if(!vis[dest]) return -1;
+        
+        int node = dest;
+        int dis = 0;
+        
+        while(node != src){
+            dis++;
+            node = parent[node];
+        }
+        
+        return dis;
+    }
+    
+    void BFS(int node, unordered_map<int, vector<int>> &adj, vector<bool> &vis, vector<int> &parent, int dest){
+        
+        parent[node] = -1;
+        
+        queue<int> q;
+        q.push(node);
+        
+        vis[node] = 1;
+        
+        while(!q.empty()){
+            int frontNode = q.front();
+            q.pop();
+            
+            if(frontNode == dest){
+                break;
+            }
+            
+            for(auto nei: adj[frontNode]){
+                if(!vis[nei]){
+                    q.push(nei);
+                    vis[nei] = 1;
+                    parent[nei] = frontNode;
+                }
+            }
+        }
+    }
+};
