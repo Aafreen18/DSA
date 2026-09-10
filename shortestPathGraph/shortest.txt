@@ -13,3 +13,12 @@
                     Special case 0/1
                            |
                        0-1 BFS
+
+
+DAG
+ ↓
+Topological Sort + Relaxation
+
+All pairs
+ ↓
+Floyd-Warshall
