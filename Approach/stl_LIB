@@ -1,0 +1,117 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
+using namespace std;
+
+int main() {
+
+    vector<int> v = {5, 2, 8, 1, 3};
+
+    // 1. sort() - ascending order
+    sort(v.begin(), v.end());
+
+    // v = {1, 2, 3, 5, 8}
+
+
+    // 2. sort() - descending order
+    sort(v.rbegin(), v.rend());
+
+    // v = {8, 5, 3, 2, 1}
+
+
+    // 3. reverse() - reverses the vector
+    reverse(v.begin(), v.end());
+
+    // v = {1, 2, 3, 5, 8}
+
+
+    // 4. min(a, b)
+    int a = 10;
+    int b = 20;
+
+    int minimum = min(a, b);
+
+    // minimum = 10
+
+
+    // 5. max(a, b)
+    int maximum = max(a, b);
+
+    // maximum = 20
+
+
+    // 6. swap(a, b)
+    swap(a, b);
+
+    // a = 20, b = 10
+
+
+    // 7. lower_bound() - first element >= x
+    // Vector MUST be sorted
+    vector<int> sorted = {1, 2, 3, 5, 5, 8, 10};
+
+    int x = 5;
+
+    auto lb = lower_bound(sorted.begin(), sorted.end(), x);
+
+    cout << "Lower bound index: "
+         << lb - sorted.begin() << endl;
+
+    cout << "Lower bound value: "
+         << *lb << endl;
+
+
+    // 8. upper_bound() - first element > x
+    auto ub = upper_bound(sorted.begin(), sorted.end(), x);
+
+    cout << "Upper bound index: "
+         << ub - sorted.begin() << endl;
+
+    cout << "Upper bound value: "
+         << *ub << endl;
+
+
+    // 9. binary_search() - checks whether x exists
+    bool found = binary_search(
+        sorted.begin(),
+        sorted.end(),
+        x
+    );
+
+    cout << "Is x present? "
+         << (found ? "Yes" : "No") << endl;
+
+
+    // 10. next_permutation()
+    vector<int> p = {1, 2, 3};
+
+    next_permutation(p.begin(), p.end());
+
+    // p = {1, 3, 2}
+
+
+    // 11. accumulate() - sum of all elements
+    long long sum = accumulate(
+        v.begin(),
+        v.end(),
+        0LL
+    );
+
+    cout << "Sum: " << sum << endl;
+
+
+    // 12. count() - counts occurrences of x
+    int frequency = count(
+        sorted.begin(),
+        sorted.end(),
+        x
+    );
+
+    cout << "Frequency of x: "
+         << frequency << endl;
+
+
+    return 0;
+}
