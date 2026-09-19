@@ -10,6 +10,23 @@
 #include<queue>
 using namespace std;
 
+// Kruskal's Algorithm (MST) — Short Notes
+// Kruskal's Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a weighted, undirected graph.
+// Sort all edges in ascending order of weight.
+// Use Disjoint Set Union (DSU) to check whether two vertices belong to the same connected component.
+// If both vertices belong to different sets, add the edge to MST and perform union().
+// If both vertices belong to the same set, skip the edge to avoid a cycle.
+// Stop when V - 1 edges are selected. Their total weight is the MST cost.
+
+// DSU Operations:
+
+// find(x): Finds the representative (parent) of the set containing x.
+// union(x, y): Merges the sets containing x and y.
+// Use Path Compression + Union by Rank/Size for efficient DSU operations.
+
+// Time Complexity: O(E log E)
+// Space Complexity: O(V)
+
 //Topics - DISJOINT-SET ,UNION FIND]
 
 class Solution {
